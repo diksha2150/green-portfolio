@@ -134,30 +134,6 @@ topBtn.addEventListener("click", () => {
 });
 
 // ----------------------------------------corousle-------------------------------
-// const slides = document.querySelectorAll(".carousel-slide");
-// const prevBtn = document.getElementById("prev-btn");
-// const nextBtn = document.getElementById("next-btn");
-// let currentSlide = 0;
-
-// function showSlide(index) {
-//   slides.forEach((slide) => slide.classList.remove("active"));
-//   slides[index].classList.add("active");
-// }
-
-// function nextSlide() {
-//   currentSlide = (currentSlide + 1) % slides.length;
-//   showSlide(currentSlide);
-// }
-
-// function prevSlide() {
-//   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-//   showSlide(currentSlide);
-// }
-
-// showSlide(currentSlide);
-
-// nextBtn.addEventListener("click", nextSlide);
-// prevBtn.addEventListener("click", prevSlide);
 
 const slides = document.querySelectorAll(".carousel-slide");
 const prevBtn = document.getElementById("prev-btn");
