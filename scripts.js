@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const percent = parseInt(skill.getAttribute("data-percent"));
 
     let current = 0;
-    const step = percent / 50; 
+    const step = percent / 50;
 
     const updateCounter = () => {
       if (current < percent) {
@@ -134,30 +134,54 @@ topBtn.addEventListener("click", () => {
 });
 
 // ----------------------------------------corousle-------------------------------
+// const slides = document.querySelectorAll(".carousel-slide");
+// const prevBtn = document.getElementById("prev-btn");
+// const nextBtn = document.getElementById("next-btn");
+// let currentSlide = 0;
+
+// function showSlide(index) {
+//   slides.forEach((slide) => slide.classList.remove("active"));
+//   slides[index].classList.add("active");
+// }
+
+// function nextSlide() {
+//   currentSlide = (currentSlide + 1) % slides.length;
+//   showSlide(currentSlide);
+// }
+
+// function prevSlide() {
+//   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+//   showSlide(currentSlide);
+// }
+
+// showSlide(currentSlide);
+
+// nextBtn.addEventListener("click", nextSlide);
+// prevBtn.addEventListener("click", prevSlide);
+
 const slides = document.querySelectorAll(".carousel-slide");
 const prevBtn = document.getElementById("prev-btn");
 const nextBtn = document.getElementById("next-btn");
 let currentSlide = 0;
 
 function showSlide(index) {
-  slides.forEach((slide) => slide.classList.remove("active"));
-  slides[index].classList.add("active");
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
 }
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-}
-
-
+// Ensure carousel initializes correctly
 showSlide(currentSlide);
 
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
+// Prevent errors if buttons do not exist
+if (nextBtn && prevBtn) {
+  nextBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  });
 
-
+  prevBtn.addEventListener("click", () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  });
+}
