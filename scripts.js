@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const percent = parseInt(skill.getAttribute("data-percent"));
 
     let current = 0;
-    const step = percent / 50; // Adjust for smooth animation
+    const step = percent / 50; 
 
     const updateCounter = () => {
       if (current < percent) {
@@ -154,12 +154,10 @@ function prevSlide() {
   showSlide(currentSlide);
 }
 
-// Initial display
+
 showSlide(currentSlide);
 
-// Event Listeners
 nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
 
-// Optional: Auto-advance the carousel
-// setInterval(nextSlide, 5000); // Change slide every 5 seconds
+
